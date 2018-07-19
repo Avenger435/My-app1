@@ -1,14 +1,106 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>MyApp1</title>
-  <base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<select id="show" class="form-control" name="show_text_area" onchange="change(this)">
+<option value="" selected="selected"></option>
+  <option id ="volvo" value="volvo">Incorrect rates</option>
+  <option id ="saab" value="saab">Incorrect Payer</option>
+  <option id="merc" value="merc">Already Paid</option>
+  <option id="audi" value="audi">Missing Information</option>
+</select>
+
+<div id="div1">
+<table table border="0" id="DataTableNew" cellspacing="10" cellpadding="0" class="tablewidth"  >
+<tr><td colspan="2">
+<textarea id ="text_area1" rows="4" cols="50" >
+ 
+</textarea>
+<textarea id ="text_area2" rows="4" cols="50" >
+
+</textarea>
+<textarea id ="text_area3" rows="4" cols="50" >
+
+</textarea>
+<textarea id ="text_area4" rows="4" cols="50" >
+
+</textarea>
+</td></tr>
+</table>
+</div>
+<script>
+
+function change(obj) {
+
+ var selectBox = obj;
+    var selected = selectBox.options[selectBox.selectedIndex].value;
+    if(selected === 'volvo'){
+        document.getElementById("text_area1").style.display = "block";
+        document.getElementById("text_area2").style.display = "none";
+    document.getElementById("text_area3").style.display = "none";
+    document.getElementById("text_area4").style.display = "none";
+    document.getElementById("text_area1").value="";
+    document.getElementById("text_area2").value = "text_area2";
+    document.getElementById("text_area3").value = "text_area3";
+    document.getElementById("text_area4").value = "text_area4";
+    }
+    else if(selected ==='saab'){
+       document.getElementById("text_area1").style.display = "none";
+         document.getElementById("text_area2").style.display = "block";
+         
+    document.getElementById("text_area3").style.display = "none";
+    document.getElementById("text_area4").style.display = "none";
+    
+    document.getElementById("text_area1").value="text_area1";
+    document.getElementById("text_area2").value = "";
+    document.getElementById("text_area3").value = "text_area3";
+    document.getElementById("text_area4").value = "text_area4";
+    }
+     else if(selected ==='merc'){
+       document.getElementById("text_area1").style.display = "none";
+         document.getElementById("text_area2").style.display = "none";
+    document.getElementById("text_area3").style.display = "block";
+    document.getElementById("text_area4").style.display = "none";
+    
+     document.getElementById("text_area1").value="text_area1";
+    document.getElementById("text_area2").value = "text_area2";
+    document.getElementById("text_area3").value = "";
+    document.getElementById("text_area4").value = "text_area4";
+    }
+     else if(selected ==='audi'){
+       document.getElementById("text_area4").style.display = "block";
+         document.getElementById("text_area2").style.display = "none";
+    document.getElementById("text_area3").style.display = "none";
+    document.getElementById("text_area1").style.display = "none";
+      document.getElementById("text_area1").value="text_area1";
+    document.getElementById("text_area2").value = "text_area2";
+    document.getElementById("text_area3").value = "text_area2";
+    document.getElementById("text_area4").value = "";
+    }else {
+    document.getElementById("text_area1").style.display = "none";
+    document.getElementById("text_area2").style.display = "none";
+    document.getElementById("text_area3").style.display = "none";
+    document.getElementById("text_area4").style.display = "none";
+    
+    document.getElementById("text_area1").value="text_area1";
+    document.getElementById("text_area2").value = "text_area2";
+    document.getElementById("text_area3").value = "text_area2";
+    document.getElementById("text_area4").value = "text_area4";
+    }
+    }
+
+    
+
+
+
+</script>
+
 </body>
 </html>
